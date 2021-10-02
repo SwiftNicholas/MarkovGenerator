@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFBD42D32708EBA200055FD6 /* MarkovGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42D22708EBA200055FD6 /* MarkovGeneratorApp.swift */; };
-		BFBD42D52708EBA200055FD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42D42708EBA200055FD6 /* ContentView.swift */; };
 		BFBD42D72708EBA400055FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD42D62708EBA400055FD6 /* Assets.xcassets */; };
 		BFBD42DA2708EBA400055FD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD42D92708EBA400055FD6 /* Preview Assets.xcassets */; };
+		BFBD42EE2708EBE900055FD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42E32708EBE800055FD6 /* Extensions.swift */; };
+		BFBD42F72708EBE900055FD6 /* MarkovCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42EC2708EBE900055FD6 /* MarkovCore.swift */; };
+		BFBD42F92708EC3200055FD6 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42F82708EC3200055FD6 /* Properties.swift */; };
+		BFBD43042708ECB000055FD6 /* Names2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD42FB2708ECAF00055FD6 /* Names2.swift */; };
+		BFBD430B2708ECB000055FD6 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43022708ECB000055FD6 /* Names.swift */; };
+		BFBD43122708EDC500055FD6 /* MarkovGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD43112708EDC500055FD6 /* MarkovGeneratorApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BFBD42CF2708EBA200055FD6 /* MarkovGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkovGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFBD42D22708EBA200055FD6 /* MarkovGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkovGeneratorApp.swift; sourceTree = "<group>"; };
-		BFBD42D42708EBA200055FD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFBD42D62708EBA400055FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBD42D92708EBA400055FD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFBD42E32708EBE800055FD6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BFBD42EC2708EBE900055FD6 /* MarkovCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkovCore.swift; sourceTree = "<group>"; };
+		BFBD42F82708EC3200055FD6 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		BFBD42FB2708ECAF00055FD6 /* Names2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Names2.swift; sourceTree = "<group>"; };
+		BFBD43022708ECB000055FD6 /* Names.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
+		BFBD43102708ED9C00055FD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BFBD43112708EDC500055FD6 /* MarkovGeneratorApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkovGeneratorApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +60,13 @@
 		BFBD42D12708EBA200055FD6 /* MarkovGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				BFBD42D22708EBA200055FD6 /* MarkovGeneratorApp.swift */,
-				BFBD42D42708EBA200055FD6 /* ContentView.swift */,
+				BFBD43102708ED9C00055FD6 /* Info.plist */,
+				BFBD43112708EDC500055FD6 /* MarkovGeneratorApp.swift */,
+				BFBD42F82708EC3200055FD6 /* Properties.swift */,
+				BFBD42E32708EBE800055FD6 /* Extensions.swift */,
+				BFBD42EC2708EBE900055FD6 /* MarkovCore.swift */,
+				BFBD43022708ECB000055FD6 /* Names.swift */,
+				BFBD42FB2708ECAF00055FD6 /* Names2.swift */,
 				BFBD42D62708EBA400055FD6 /* Assets.xcassets */,
 				BFBD42D82708EBA400055FD6 /* Preview Content */,
 			);
@@ -137,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBD42D52708EBA200055FD6 /* ContentView.swift in Sources */,
-				BFBD42D32708EBA200055FD6 /* MarkovGeneratorApp.swift in Sources */,
+				BFBD43122708EDC500055FD6 /* MarkovGeneratorApp.swift in Sources */,
+				BFBD42F92708EC3200055FD6 /* Properties.swift in Sources */,
+				BFBD42F72708EBE900055FD6 /* MarkovCore.swift in Sources */,
+				BFBD430B2708ECB000055FD6 /* Names.swift in Sources */,
+				BFBD43042708ECB000055FD6 /* Names2.swift in Sources */,
+				BFBD42EE2708EBE900055FD6 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,13 +284,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MarkovGenerator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 9Z83TAWGQL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MarkovGenerator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -296,13 +315,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MarkovGenerator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 9Z83TAWGQL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MarkovGenerator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
