@@ -4,19 +4,26 @@ import Foundation
 
 class MarkovGenerator{
    
-    init(words:[String]){
+    init(words:[String], genre: SourceGenre){
         
-        self.transitionTable = self.createTransitions(wordList: words, currentTable: self.transitionTable)
+    self.transitionTable = UserDefaults.standard.object(forKey: "\(genre.rawValue)Transitions") as? [String : [String]] ??
+        self.createTransitions(wordList: words, currentTable: self.transitionTable)
+        
+        if let matrix = UserDefaults.standard.object(forKey: "\(genre.rawValue)Occurences") as? [String : [String : Int]] {
+            self.occurrenceMatrix = matrix
+            
+        } else {
+            self.occurrenceMatrix = self.createMatrixes(characterSet: self.characterSet)
+            self.occurrenceMatrix = self.generateOccurrences(transitionTable: self.transitionTable, matrix: self.occurrenceMatrix, genre: genre)
+        }
+      
+        if let probabilities = UserDefaults.standard.object(forKey: "\(genre.rawValue)Probabilities") as? [String : [String : Int]] {
+            self.probabilitiesMatrix = probabilities
+        } else {
+            self.probabilitiesMatrix = self.generateProbabilities(characterSet: self.characterSet, occurenceMatrix: self.occurrenceMatrix, genre: genre)
+        }
         
       
-        self.occurrenceMatrix = self.createMatrixes(characterSet: self.characterSet)
-      
-      
-        self.occurrenceMatrix = self.generateOccurrences(transitionTable: self.transitionTable, matrix: self.occurrenceMatrix)
-        
-        self.probabilitiesMatrix = self.generateProbabilities(characterSet: self.characterSet, occurenceMatrix: self.occurrenceMatrix)
-        
-        print(probabilitiesMatrix)
         
         self.patterns = observePatterns(words: words)
         

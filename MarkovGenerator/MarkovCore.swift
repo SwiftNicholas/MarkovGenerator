@@ -10,7 +10,7 @@ import Foundation
 
 extension MarkovGenerator{
     
-    internal func generateOccurrences(transitionTable:[String:[String]], matrix:[String:[String:Int]])->[String:[String:Int]]{
+    internal func generateOccurrences(transitionTable:[String:[String]], matrix:[String:[String:Int]], genre: SourceGenre)->[String:[String:Int]]{
         var updatedMatrix:[String:[String:Int]] = matrix
   
         for character in transitionTable.keys{
@@ -22,7 +22,7 @@ extension MarkovGenerator{
             updatedMatrix.updateValue(matrixRow, forKey: character)
         }
         
-        
+        UserDefaults.standard.set(updatedMatrix, forKey: "\(genre.rawValue)Occurences")
         return updatedMatrix
     }
 }
@@ -44,6 +44,7 @@ extension MarkovGenerator{
             
             matrix.updateValue(valueDict, forKey: letter)
         }
+       
         return matrix
     }
 }
@@ -154,7 +155,7 @@ extension MarkovGenerator{
         Passsed to distribution function to populate array of values.
     */
     
-   internal func generateProbabilities(characterSet:[String],occurenceMatrix:[String:[String:Int]])->[String:[String:Int]]{
+    internal func generateProbabilities(characterSet:[String],occurenceMatrix:[String:[String:Int]], genre:SourceGenre)->[String:[String:Int]]{
         var probabilities:[String:[String:Int]] = occurenceMatrix
       
         // Access character
@@ -181,7 +182,7 @@ extension MarkovGenerator{
               
             }
         }
-        
+       UserDefaults.standard.set(probabilities, forKey: "\(genre.rawValue)Probabilities")
         return probabilities
     }
 }
@@ -230,6 +231,8 @@ extension MarkovGenerator{
                 })
            
         })
+        
+        UserDefaults.standard.set(transitionsTable, forKey: "Transitions")
         return transitionsTable
     }
 }
@@ -244,7 +247,7 @@ extension MarkovGenerator{
         var result:[String] = []
         
         var currentCharacter:String = "#"
-        var currentPattern: [LetterType] = []
+        var currentPattern: [LetterType] = [.C,.V,.C,.V,.V]
         
         if randomPattern {
             for _ in 0..<length{
