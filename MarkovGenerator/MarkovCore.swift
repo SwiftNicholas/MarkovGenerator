@@ -249,7 +249,21 @@ extension MarkovGenerator{
         var currentCharacter:String = "#"
         var currentPattern: [LetterType] = [.C,.V,.C,.V,.V]
         
+        if length > currentPattern.count {
+            var additional = length - currentPattern.count
+            for x in (0...additional){
+                currentPattern.append(currentPattern[x])
+            }
+        }
+        
+        if length < currentPattern.count {
+            var remove = currentPattern.count - length
+            currentPattern.removeLast(remove)
+        }
+        
+        
         if randomPattern {
+            currentPattern = []
             for _ in 0..<length{
                 let type = Int().random()
                 if type % 2 == 0 {
@@ -259,6 +273,8 @@ extension MarkovGenerator{
                 }
             }
         }
+        
+        print(currentPattern)
         
      
         repeat {

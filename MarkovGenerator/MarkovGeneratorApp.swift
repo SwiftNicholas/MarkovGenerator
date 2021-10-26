@@ -18,6 +18,7 @@ enum SourceGenre: String, CaseIterable, Identifiable {
     case Pokemon
     case Naruto
     case Normal
+    case Lands
     
     var id: String {self.rawValue}
     
@@ -32,14 +33,11 @@ enum SourceGenre: String, CaseIterable, Identifiable {
             return MarkovGenerator(words: Names.Naruto, genre: self)
         case .Normal:
             return MarkovGenerator(words: Names2.k, genre: self)
+        case .Lands:
+            return MarkovGenerator(words: Names.Lands, genre: self)
         }
     }
 }
-
-enum Patterns: String, CaseIterable, Identifiable {
-    case CCVC
-}
-
 
 
 struct ContentView: View {
@@ -61,12 +59,15 @@ struct ContentView: View {
                 Text("People").tag(SourceGenre.Normal)
                 Text("LOTR").tag(SourceGenre.LOTR)
                 Text("Pokemon").tag(SourceGenre.Pokemon)
+                Text("Lands").tag(SourceGenre.Lands)
                 }
             }.pickerStyle(SegmentedPickerStyle())
             
         Button("New Name"){
+            print(length)
             let source: MarkovGenerator = genre.loadArray(genre: genre)
-            generatedName = source.generateWord(randomPattern: true, length: Int(length) ?? 6)
+            generatedName = source.generateWord(randomPattern: false, length: Int(length) ?? 6)
+            
             }
         }
             

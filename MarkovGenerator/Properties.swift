@@ -9,6 +9,8 @@ class MarkovGenerator{
     self.transitionTable = UserDefaults.standard.object(forKey: "\(genre.rawValue)Transitions") as? [String : [String]] ??
         self.createTransitions(wordList: words, currentTable: self.transitionTable)
         
+        print(transitionTable)
+        
         if let matrix = UserDefaults.standard.object(forKey: "\(genre.rawValue)Occurences") as? [String : [String : Int]] {
             self.occurrenceMatrix = matrix
             
